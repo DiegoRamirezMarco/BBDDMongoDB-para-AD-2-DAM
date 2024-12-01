@@ -28,7 +28,11 @@ public class Main {
                         ╠══════════════════════════════════════════╣
                         ║ 7. Eliminar profesores por calificación  ║
                         ╠══════════════════════════════════════════╣
-                        ║ 8. Salir                                 ║
+                        ║ 8. Buscar alumno por mail                ║
+                        ╠══════════════════════════════════════════╣
+                        ║ 9. Eliminar alumnos por calificación     ║
+                        ╠══════════════════════════════════════════╣
+                        ║ 0. Salir                                 ║
                         ╚══════════════════════════════════════════╝
                      """);
         while(opcion!=8){
@@ -42,7 +46,9 @@ public class Main {
                 case 5 -> controlProfesor.buscarProfesorPorRangoEdad();
                 case 6 -> controlProfesor.actualizarCalificacionProfesor();
                 case 7 -> controlProfesor.eliminarProfesoresPorCalificacion();
-                case 8 -> System.out.println("Chao!");
+                case 8 -> controlAlumno.buscarPorMail();
+                case 9 -> controlAlumno.eliminarPorCalificacion();
+                case 0 -> System.out.println("Chao!");
                 default -> System.out.println("Opción no válida.");
             }
         }

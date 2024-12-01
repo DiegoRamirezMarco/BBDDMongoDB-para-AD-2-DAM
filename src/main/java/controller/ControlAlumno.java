@@ -33,4 +33,21 @@ public class ControlAlumno {
     public void mostrarAlumnos() {
         daoAlumno.mostrarAlumnos();
     }
+
+    public void buscarPorMail(){
+        System.out.println("Introduce el email por el que buscar");
+        String email = scanner.nextLine();
+        Document doc = daoAlumno.buscarAlumnoPorEmail(email);
+        if (doc == null){
+            System.out.println("No se encontro el alumno");
+        }else {
+            System.out.println(doc.toJson());
+        }
+    }
+    public void eliminarPorCalificacion(){
+        System.out.println("Introduce la calificacion para eliminar alumnos");
+        int calificacion = scanner.nextInt();
+        daoAlumno.eliminarPorCalificacion(calificacion);
+        System.out.println("Alumno eliminado");
+    }
 }
